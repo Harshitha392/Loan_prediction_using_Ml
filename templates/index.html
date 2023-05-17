@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="navbar2">
+        <h1>LOAN APPROVAL PREDICTION</h1>
+    </div>
+    <span class="reversed reversedLeft">
+        ⚠ The model used is logistic regression model and its efficiency is 78%. Hence the predictions made are not 100% accurate
+      </span> 
+      <br>
+    <div class="login">
+            <form action="{{ url_for('predict')}}" method="post">
+                <br>
+                <br>
+                <br>
+                <br>
+                <input type="text" name="gender" placeholder="Gender" required="required"/>
+                <input type="text" name="married" placeholder="Married" required="required"/>
+                <input type="text" name="dependencies" placeholder="Dependencies" required="required"/>
+                <input type="text" name="education" placeholder="Education" required="required"/>
+                <input type="text" name="self_employed" placeholder="Self_employed" required="required"/>
+                <input type="text" name="applicant_income" placeholder="Applicant_income" required="required"/>
+                <input type="text" name="coapplicant_income" placeholder="Coapplicant_income" required="required"/>
+                <input type="text" name="loan_amount" placeholder="Loan_amount" required="required"/>
+                <input type="text" name="loan_amount_term" placeholder="Loan_amount_term" required="required"/>
+                <input type="text" name="credit_history" placeholder="Credit_history" required="required"/>
+                <input type="text" name="property_area" placeholder="Property_area" required="required"/>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+            <br>
+            <br>
+            <div class="prediction">
+            {{prediction_text}}
+            </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
